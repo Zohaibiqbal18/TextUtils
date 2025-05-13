@@ -46,8 +46,9 @@ function App() {
 
       {/* Define the routes */}
       <Routes>
+        <Route exact path="/TextUtils" element={<Welcome  mode={mode}/>} />
         <Route exact path="/welcome" element={<Welcome  mode={mode}/>} />
-        <Route exact path="/" element={<TextForm heading="Enter text to analyze" mode={mode} />} />
+        <Route exact path="/home" element={<TextForm heading="Enter text to analyze" mode={mode} />} />
         <Route exact path="/about" element={<About title="About" />} />
       </Routes>
     </Router>
