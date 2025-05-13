@@ -7,7 +7,7 @@ import Welcome from './components/Welcome';
 
 import React, { useState } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   // Link
