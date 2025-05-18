@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 export default function TextForm(props) {
 
     const [text, setText] = useState(""); // Initialize text state
-    const [alert,setAlert] = useState(null)
 
     const showAlert = (message,type) => {
         setAlert({
@@ -20,20 +19,20 @@ export default function TextForm(props) {
     const handleUpCase = () => {
         let newText = text.toUpperCase();
         setText(newText);
-        showAlert("Text has Converted to UpperCase","success")
+        props.showAlert("Text has Converted to UpperCase","success")
     };
 
     const handleLoCase = () => {
         let newText = text.toLowerCase();
         setText(newText);
-        showAlert("Text has Converted to LowerCase","success")
+        props.showAlert("Text has Converted to LowerCase","success")
 
     };
 
     const ClearText = () => {
         let newText = "";
         setText(newText);
-        showAlert("Text has Cleared","success")
+        props.showAlert("Text has Cleared","success")
 
     };
 
