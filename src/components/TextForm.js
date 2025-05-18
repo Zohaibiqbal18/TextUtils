@@ -7,6 +7,16 @@ export default function TextForm(props) {
     const [text, setText] = useState(""); // Initialize text state
     const [alert,setAlert] = useState(null)
 
+    const showAlert = (message,type) => {
+        setAlert({
+            msg: message,
+            type: type
+        })
+        setTimeout(() => {
+            setAlert(null)
+        }, 1000);
+    }
+
     const handleUpCase = () => {
         let newText = text.toUpperCase();
         setText(newText);
