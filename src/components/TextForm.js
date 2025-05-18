@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 
+
+
 export default function TextForm(props) {
+
+    const [text, setText] = useState(""); // Initialize text state
+    const [alert,setAlert] = useState(null)
+
     const handleUpCase = () => {
         let newText = text.toUpperCase();
         setText(newText);
@@ -34,8 +40,6 @@ export default function TextForm(props) {
     const handleText = (event) => {
         setText(event.target.value); // Capture user input
     };
-
-    const [text, setText] = useState(""); // Initialize text state
 
     return (
         <div style={{color: props.mode === "dark" ? "white" : "black"}}>
