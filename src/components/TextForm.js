@@ -45,12 +45,11 @@ export default function TextForm(props) {
             <div className="container ">
                 <h1 className="my-2">{props.heading}</h1>
                 <div className="mb-3">
-                    <label htmlFor="myBox" className="form-label">Example textarea</label>
                     <textarea className="form-control my-2" value={text} onChange={handleText} style={{backgroundColor: props.mode === "dark" ? "black" : "white", color: props.mode ==="dark"? "white" : "black"}} id="myBox" rows="3"/>
                 </div>
-                <button className="btn btn-primary my-2" onClick={handleUpCase}>Convert To UpperCase</button>
-                <button className="btn btn-primary m-2" onClick={handleLoCase}>Convert To LowerCase</button>
-                <button className="btn btn-primary m-2" onClick={ClearText}>Clear Text</button>
+                <button disabled={text.length===0} className="btn btn-primary my-2" onClick={handleUpCase}>Convert To UpperCase</button>
+                <button disabled={text.length===0} className="btn btn-primary m-2" onClick={handleLoCase}>Convert To LowerCase</button>
+                <button disabled={text.length===0} className="btn btn-primary m-2" onClick={ClearText}>Clear Text</button>
             </div>
 
             <div className="container">
