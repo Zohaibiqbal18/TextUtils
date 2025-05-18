@@ -22,6 +22,8 @@ export default function Navbar(props) {
               <Link className="nav-link" to="/about">{props.about}</Link>
             </li>
           </ul>
+          <button className='cus' style={{minWidth: "20px", border: "2px solid", backgroundColor: "red", minHeight:"20px"}} /*onClick={props.TogRed}*/></button>
+
 
           {/* Dark Mode Toggle Switch */}
           <div className={`form-check form-switch mx-2 text-${props.mode === "light" ? "dark" : "light"}`}>
