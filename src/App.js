@@ -17,6 +17,7 @@ import {
 function App() {
   const [mode, setMode] = useState("light");
   const [alert,setAlert] = useState(null)
+  // const [nMode,sMode] = useState("light")
 
   const showAlert = (message,type) => {
     setAlert({
@@ -39,9 +40,19 @@ function App() {
     }
   };
 
+  //   const TogRed = () => {
+  //   if (nMode === "light") {
+  //     sMode("red");
+  //     document.body.style.backgroundColor = "red";
+  //   } else {
+  //     sMode("light");
+  //     document.body.style.backgroundColor = "white";
+  //   }
+  // };
+
   return (
     <Router>
-      <Navbar title="TextUtils" home="Home" about="About" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="TextUtils" home="Home" about="About" mode={mode} toggleMode={toggleMode} /*TogRed={TogRed}*//>
       <Alert alert={alert} />
 
       {/* Define the routes */}
@@ -51,7 +62,7 @@ function App() {
         <Route exact path="/textutils" element={<Welcome mode={mode}/>} />
         <Route exact path="/welcome" element={<Welcome  mode={mode}/>} />
         <Route exact path="/home" element={<TextForm heading="TextUtils - LowerCase Converter | UpperCase Converter | Text Clearer" mode={mode} showAlert={showAlert} />} />
-        <Route exact path="/about" element={<About title="About" mode={mode}/>} />
+        <Route exact path="/about" element={<About title="About" mode={mode} /*TogRed={TogRed}*/ />} />
       </Routes>
     </Router>
     // <>
